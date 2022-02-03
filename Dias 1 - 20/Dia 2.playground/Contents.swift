@@ -83,4 +83,52 @@ let prices = [
     "Pespsi" : 2
 ]
 
+// Criando coleções vazias
+
+// Dicionário Vazio
+
+var Celular = [String : String]()
+
+// Podendo adicionar intens depois
+
+Celular["Apple"] = "Iphone 13"
+
+// Array Vazia
+
+var results = [Int]()
+
+// Enumerations
+
+// Quando fazemos tarefas como requisição de API precisamos especificar caso algum erro aconteça
+
+enum Result {
+    case sucess
+    case failure
+}
+
+// Podemos usar em direções, erros, dias da semana etc
+
+// Enums podem ser declarados com ações específicas
+
+enum Atividades {
+    case correndo(destino: String)
+    case feliz(motivo: String)
+    case dormindo(posição: String)
+    case conversando(sobre: String)
+}
+
+let correndo = Atividades.correndo(destino: "Casa")
+
+
+// Raw Values
+
+// O Swift automaticamente da um valor numerico começando por 0 as coleções, mas podemos estabelecer as nossas próprias
+
+enum Planetas: Int {
+    case Terra = 3
+    case Marte
+    case Jupiter
+    case Saturno
+    
+}
 
