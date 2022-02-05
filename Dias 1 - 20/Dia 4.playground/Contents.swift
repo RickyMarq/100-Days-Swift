@@ -53,3 +53,65 @@ repeat {
     jujoba += 1
 } while jujoba < 10
 
+
+// Saindo de Loops
+
+// Podemos sair de um loop usando o "break" que irá impedir que qualquer parte abaixo dele seja executada
+
+var contagem = 5
+
+while contagem >= 0 {
+    print(contagem)
+    break
+    //contagem -= 1
+}
+
+// O break impede que a contagem regressiva ocorra !
+
+
+// Saindo de vários Loops
+
+// Para fazer isso usamos o "OuterLoop" e o "Break"
+
+// O break quebra apenas um Loop e em caso espeíficos precisamos quebrar mais de um.
+
+outerLoop: for i in 1...10 {
+    for j in 1...10 {
+        let product = i * j
+        print(product)
+        
+        if product == 50 {
+            print("aaa")
+            break outerLoop
+        }
+    }
+}
+    
+// Continue: Caso quisermos podemos apenar continuar um loop e executar o resto do que usar um break
+
+for i in 1...5 {
+    if i % 2 == 1 {
+        continue
+    }
+    print(i)
+}
+
+// Loops Infinitos
+
+// É comum provocar o acontecimento de loops infinitos usando o while, usamos em todos os apps de iphone para que quando ele comece a rodar até o usuário parar
+
+// São feitos usando o while true
+
+var zig = 0
+while true {
+    print("")
+    zig += 1
+    
+    if zig  == 20 {
+        break
+    }
+}
+
+// Lembramos de sempre colocar o break para que não criemos um loop enterno que é impossível de sair
+
+
