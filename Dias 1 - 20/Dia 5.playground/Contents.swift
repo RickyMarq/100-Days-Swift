@@ -61,4 +61,92 @@ TheStrokes(to: "Julian Casablancas")
 
 // Parâmetros Padrão
 
+// Podemos endereçar um valor padrão a um parâmetro simplesmente usando o "="
+
+func saudação(_ person: String, nicely: Bool = true) {
+    if nicely == true {
+        print("Olá, \(person)")
+    } else {
+        print("Vish, é o \(person) de novo")
+    }
+}
+
+saudação("Henrique", nicely: false)
+
+// Exemplo mais fácil:
+
+func GtaV(name: String, cheat: Bool = false) {
+    
+    if cheat {
+        print("Vou jogar na legalidade")
+    } else {
+        print("Cansei, vou ativar o cheat")
+    }
+}
+
+GtaV(name: "Gta", cheat: false)
+
+// Funções Variáveis
+
+// São funções que aceitam o mesmo parâmetro varias vezes do mesmo tipo
+
+func quadrado(Lados: Int...) {
+    for Lados in Lados {
+        print("\(Lados) quadrado são \(Lados * Lados) lados")
+    }
+}
+
+quadrado(Lados: 1, 2, 3, 4, 5)
+
+// Ao invés de ser 1 como um int normal ele é 0 ou milhões de números.
+
+// Funções "Jogáveis"
+
+// Podemos usar funções para lidar com erros também, por isso, usamos o "throw"
+
+// Primeiramente definimos um erro
+
+enum ErroSenha: Error {
+    case obvious
+}
+
+func Senha(_ password: String) throws -> Bool {
+    if password == "password" {
+        throw ErroSenha.obvious
+    }
+    return true
+}
+
+// DO / Try / Catch
+
+// do começa uma seção de códigos que podem dar um erro
+
+// try é usado antes que volte um erro
+
+// catch é a maneira que iremos lidar com esses erros
+
+
+do {
+    try Senha("password")
+    print("Essa senha é boa")
+} catch {
+    print("Você não pode usar essa senha")
+}
+
+ // Caso algum erro ocorra já no do o swift joga automaticamente no catch
+
+
+// Funções Inout
+
+// Todos os parâmetros passados para uma função são constantes, entretanto se quisermos podemos passar um inout
+
+// Inout: Parâmetro muda dentro da função
+
+func doubleinPlace(number: inout Int) {
+    number *= 2
+}
+
+var myNum = 10
+doubleinPlace(number: &myNum)
+
 
