@@ -4,13 +4,11 @@ import UIKit
 
 // O Swift nos permite usar funções como qaulquer outro tipo com String ou Inteiros
 
-let dirgigindo = {
+let dirigindo = {
     print("Estou dirigindo")
 }
 
 // Nos permitindo chama-las como funções também
-
-dirgigindo()
 
 // O nome disso é closures
 
@@ -32,4 +30,32 @@ let música = { (grupo: String, música: String) -> String in
 
 let menssagem = música("The Black Keys", "Chop and Change")
 print(menssagem)
+
+// Closures como parâmetros
+
+// Podemos assim usar uma closure dentro de uma fuction
+
+func viagem (Ação: () -> Void) {
+    print("Estou me preparando")
+    Ação()
+    print("Eu cheguei")
+}
+
+viagem(Ação: dirigindo)
+
+// Trailing Closure Syntax
+
+func travel (Action: () -> Void) {
+    print("Estou me preparando")
+    Action()
+}
+
+travel {
+    print("Rio de janeiro")
+}
+
+// Isso é muito comum no swift
+
+// Por conta do último paâmetro ser uma closure podemos eliminar o ()
+
 
