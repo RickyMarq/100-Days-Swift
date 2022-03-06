@@ -44,3 +44,17 @@ for album in albums {
     print("\(album) de The Black Keys está disponível no Apple Music")
 }
     
+print("-- Referring to the curretn instance --")
+
+// Inside methods we can call a constant called "self"
+
+// Its useful when you create a initializers that have the same name as your property
+
+struct Person {
+    var Name: String
+    init(name: String) {
+        print("\(name) was born in 2002")
+        self.name = name
+    }
+}
+
