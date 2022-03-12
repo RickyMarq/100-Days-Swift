@@ -111,4 +111,51 @@ extension Int {
 
 numb.isOdd
 
-    
+print("-- Protocols Extensions --")
+
+// Protocols what methods something should have
+
+// Protocols extensions are like regular extensions except rather than expecting a type such a Int
+
+let tbk = ["Patrick Carney", "Dan Auerbach"]
+let aha = ["Morten", "Paul", "Magnum"]
+
+extension Collection {
+    func sumarize() {
+        print("\(count)")
+        
+        for name in self {
+            print(name)
+        }
+    }
+}
+
+// Note that the func dosn't returne a type.
+
+tbk.sumarize()
+tbk.sumarize()
+
+print("-- Protocol oriented programming --")
+
+// Protocols extensions can provide default implementations for our own protocol methods
+
+protocol identify {
+    var id: String {get set}
+    func identify()
+}
+
+// Extensions lets us provide a default value for identify:
+
+extension identify {
+    func identify() {
+        print("My id is \(id)")
+    }
+}
+
+struct User2: identify {
+    var id: String
+}
+
+let Henrique = User2(id: "Ricky")
+Henrique.identify()
+
