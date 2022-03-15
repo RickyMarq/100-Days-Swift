@@ -109,8 +109,44 @@ print("\(tbk!)")
 
 albumrelease(year: 2025) ?? "UKNOWN BROTHER"
 
-print("-- Enumerations --")
+print("-- Structs --")
 
-// Lets us define our own value
+// Structs are complex data types
 
+struct person {
+    var name: String
+    var born: Int
+    var BloodType: String
+    var weight: Int
+    var height: Double
+}
 
+let henrique = person(name: "Henrique", born: 2002, BloodType: "A-", weight: 65, height: 1.75)
+print("My blood type is \(henrique.BloodType)")
+
+print("-- Classes --")
+
+// Classes are similar to Structs but they differ from some tools
+
+// For example, in classes we have to declare a initializer for the class
+
+class Person {
+    var name: String
+    var age: Int
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+}
+
+// The most awesome differ from structs it's classes can inhretance
+
+class singer {
+    var man = "Johnny Cash"
+    var woman = "Patse Cline"
+}
+
+class Country: singer {
+    
+}
