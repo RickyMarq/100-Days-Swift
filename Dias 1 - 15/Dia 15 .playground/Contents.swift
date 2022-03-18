@@ -125,3 +125,9 @@ class TheblackKeys: album {
 }
 
 // Only the parent class album have the "GetPerformance"
+
+// Converting types with typecasting
+
+// Convert an object of one type to another type.
+
+
